@@ -1,0 +1,51 @@
+{
+  "name": "first-extension",
+  "displayName": "first_extension",
+  "description": "Gemini Chat in VS Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Other"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "first-extension.karthi",
+        "title": "Open Gemini Chat"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "chatViewContainer",
+          "title": "Gemini",
+          "icon": "media/chat-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "chatViewContainer": [
+        {
+          "type": "webview", 
+          "id": "chatView",
+          "name": "Assistant Chat"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.80.0",
+    "eslint": "^9.25.1",
+    "@vscode/test-cli": "^0.0.11"
+  },
+  "dependencies": {
+    "axios": "^1.11.0"
+  }
+}
